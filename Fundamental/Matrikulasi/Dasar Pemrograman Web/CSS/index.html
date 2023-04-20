@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="./style.css">
+   <title>Document</title>
+
+   <style>
+      a[href] {
+         color: red;
+      }
+
+      a[href^="#"] {
+         color: blue;
+         background-color: silver;
+      }
+
+      a[href*="example"] {
+         background-color: aqua;
+      }
+
+      a[href*="insensitive" i] {
+         background-color: orange;
+      }
+
+      a[href$='.org'] {
+         background-color: green;
+         color: white;
+      }
+      a:link {
+         color: red;
+      }
+      a:visited {
+         color: blue;
+      }
+      a:active {
+         color: aliceblue;
+      }
+      a:hover {
+         color: black;
+      }
+   </style>
+</head>
+<body>
+   <ul>
+      <li><a href="#internal">Internal Link</a></li>
+      <li><a href="http://example.com">Example Link</a></li>
+      <li><a href="#Insensitive">#Insensitive Internal Link</a></li>
+      <li><a href="http://example.org">Example org link</a></li>
+   </ul>
+</body>
+</html>
