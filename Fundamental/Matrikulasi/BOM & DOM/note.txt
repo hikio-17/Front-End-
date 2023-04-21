@@ -1,0 +1,8 @@
+1. Document Object Model (DOM)
+==> Sekumpulan dari beberapa object yang mana meliputi struktur ataupun isi dari sebuah dokumen pada suatu website. DOM bisa juag adisebut sebagai API yang memiliki beberapa fungsi untuk melakukan manipulasi pada struktur, isi, style dan sebagainya pada suatu dokumen seperti sebuah simpul yang dapat digunakan oleh bahasa pemrograman untuk berinteraksi dengan dokumen pada sebuah website.
+
+2. Browser Object Model (BOM)
+==> Sebuah cara bagai bahasa pemrograman untuk melakukan manipulasi pada browser secara langsung. Biasanya yang digunakan adalah window seperti mengecek event pada window dengan window.addEventListener atau mengecek lebar atau tinggi dari window.
+
+conclusion
+=> Baik DOM dan juga BOM bisa digunakan secara bersamaan karena keduanya saling terkait. Jika yang dibutuhkan adalah melakukan perubahan pada dokumen atau element HTML seperti isi konten, struktur, atau style maka konsep DOM yang akan digunakan. Akn tetapi jika ternyata yang diperlukan adalah manipulasi atau pengambilan informasi pada broser seperti tinggi window, lokasi, history, maka konsep BOM yang akan digunakan.

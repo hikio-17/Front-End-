@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+
+   <style>
+      * {
+         margin: 0;
+         padding: 0;
+      }
+
+      .container {
+         display: flex;
+         justify-content: center;
+         text-align: center;
+      }
+
+      button {
+         width: 200px;
+         font-size: 15px;
+         padding: 3px;
+         margin: 8px;
+      }
+
+      .links ul {
+         text-align: left;
+      }
+
+   </style>
+</head>
+<body>
+   <div class="container">
+      <div id="content">
+         <h2>Its Cube Time!</h2>
+         <img id="gambar" src="https://dicoding-web-img.sgp1.cdn.digitaloceanspaces.com/original/commons/homepage-dicoding-challenge-illustration.png" alt="cube" width="150" height="200">
+         <p id="description"><b>Sudah siap untuk memecahkan teka-teki permainan</b></p>
+   
+         <div class="button-group">
+            <div class="button">
+               <button>Sejarah</button>
+            </div>
+            <div class="button">
+               <button>Permainan</button>
+            </div>
+            <div class="button">
+               <button>Fun Fact</button>
+            </div>
+            <div class="button">
+               <button>Play (Coming Soon)</button>
+            </div>
+            <div class="button">
+               <button>Exit</button>
+            </div>
+         </div>
+
+         <hr width="95%" size="2" color="black">
+         <div class="links">
+            <p>Situs lainnya yang tidak kalh menarik:</p>
+            <ul>
+               <li><a href="https://ww.dicoding.com" id="dicodingLink">Dicoding</a></li>
+               <li><a href="https://www.google.com" id="googleLink">Google</a></li>
+            </ul>
+         </div>
+      </div>
+   </div>
+   <script>
+      // create element
+      // const p = document.createElement('h1');
+      // p.innerText = 'Hello wrold!';
+      
+      // const content = document.getElementById('content');
+      // content.append(p);
+
+      // create tag img and set atribut
+      // const img = document.createElement('img');
+      // img.setAttribute('src', 'https://miro.medium.com/v2/resize:fit:1400/format:webp/1*fTcg9Akc56opLO919QoIZw.jpeg');
+
+      // img.src = 'https://miro.medium.com/v2/resize:fit:1400/format:webp/1*fTcg9Akc56opLO919QoIZw.jpeg';
+
+      // content.append(img);
+
+      // mengubah ukuran gambar
+      const image = document.getElementById('gambar');
+      image.setAttribute('width', 300);
+      image.setAttribute('height', 300);
+
+      // set type button submit in button play
+      // mengambil semua dengan class button
+      const buttons = document.querySelectorAll('.button');
+
+      for (const button of buttons) {
+         button.children[0].style.borderRadius = '6px';
+      }
+
+      // mengambil elment play button
+      const playButton = buttons[3];
+      
+      // mengambil button play button
+      const button = playButton.children[0];
+      button.setAttribute('type', 'submit');
+
+      // implementasi innerText
+      const dicoding = document.getElementById('dicodingLink');
+      dicoding.innerText = 'Belajar pemrograman di Dicoding'
+
+      const google = document.getElementById('googleLink');
+      google.innerText = 'Mencari sesuatu di Google';
+
+      // implementasi innertHTML
+      dicoding.innerHTML = 'Belajar Pemrograman di <i>Dicoding</i>';
+      google.innerHTML = 'Mencari sesuatu di <i>Google</i>';
+   </script>
+</body>
+</html>
