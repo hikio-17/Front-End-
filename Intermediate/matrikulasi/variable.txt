@@ -1,0 +1,29 @@
+Aturan penggunaan let dan const
+
+1. Persamaannya ==> Variable yang dideklarasikan dengan let atau const tidak dapat dideklarasikan ulang pada cakupan yang sama;
+
+2. Perbedaannya ==> Jika mengguankan let, maka variabel tersebut dapat diinisialisasi ulang nilainya. Sedangkan const tidak bisa, sehingga jika menggunakan const pastikan langsung menginisialisasi nilai dari variabel tersebut.
+
+====> perbedaan antara mengubah nilai dengan menginisialisasi ulang nilai pada variabel <====
+
+=== menginisialisasikan ulang nilai variabel
+pada array
+const fruits = ['apple', 'banana', 'apple'];
+fruits = ['manggo', 'graple'];
+
+pada object
+const people = { name: 'Hikma Nelda', age: 22 };
+people = { name: 'Fajri Muhammad Tio', age: 23 };
+
+=== mengubah nilai pada Variable
+pada array
+const fruits = ['banana', 'lemon'];
+fruits.push('manggo');
+
+pada object
+const people = { name: 'Hikme Nelda', age: 22 };
+people.address = 'Semurup';
+
+
+membuat variabel dengan const akan membuat variabel bersifat read-only tetapi bukan berarti nilainya tidak dapat diubah. variable yang menampung nilai primitif seperti string, number maupun boolen mungkin akan kesulitan dalam mengubah nilainya secara langsung yang mengharuskan untuk diinisialisasi ulang variabel nya.
+
