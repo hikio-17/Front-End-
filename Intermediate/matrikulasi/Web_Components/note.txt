@@ -1,0 +1,12 @@
+web components merupakan salah satu fitur yang diterapkan standar world wide web consortium (W3C). FItur ini memudahkan developer dalam membuat komponen UI websitenya menjadi lebih modular.
+
+====> Kelebihan web components dibandingkan komponen yang dibuat menggunakan framework <====
+1. Standard: standar dari W3C
+2. Compatibility untuk semua framework
+3. Simple karena dibangun dengan menggunakan HTML, CSS,JS murni
+
+
+Terdapat duaAPI penting dalam menerapkan web component yaitu;
+1. Custom Elements digunakan untuk membuat elemen baru (custom element). bisa juga menentukan perilaku element tersebut sesuai kebutuhan.
+
+2. Shadow DOM digunakan untuk membuat HTML element terenkapsulasi dari gangguan luar. Biasanya digunakan pada custom element, agar element tersebut tidak terpengaruh oleh styling yang ditetapkan di luar dari custom elemenya.

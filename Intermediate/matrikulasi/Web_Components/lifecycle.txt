@@ -1,0 +1,13 @@
+===> lifecycle callbacks yang ada pada HTMLElement:
+
+1. connectedCallback()
+    => akan terpanggil setiap kali elemen berhasil ditambahkan ke dokumen HTML (DOM). tepat untuk menjalankan konfigurasi awal seperti mendapatkan data, atau mengatur attribute.
+
+2. disconnectedCallback()
+    => akan terpanggil setiap kali element dikeluarkan ( remove()) dari DOM. tempat yang tepat untuk membersihkan data yang masih disimpan pada elemen. Bisa itu event, state, ataupun objek.
+
+3. attributeChangedCallback()
+    => akan terpanggil setiap kali nilai atribut yang di observe melalui fungsi static get observedAttributes diubah. dimanfaatkan untuk membuat ulang data yang ditampilkan oleh elemen.
+
+4. adoptedCallback()
+    => akan terpanggil setiap kali element dipindahkan pada dokumen baru.
