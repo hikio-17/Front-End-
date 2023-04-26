@@ -1,11 +1,14 @@
+const DataSource = require("../data/data-source");
+
 const main = function () {
   const searchElement = document.querySelector('#searchElement');
   const buttonSearchElement = document.querySelector('#searchButtonElement');
   const clubListElement = document.querySelector('#clubList');
 
   const onButtonSearchClicked = () => {
-    const dataSource = new DataSource(renderResult, fallbackResult);
-    dataSource.searchClub(searchElement.value);
+    DataSource.searchClub(searchElement.value)
+      .then(renderResult)
+      .catch(fallbackResult)
   };
 
   const renderResult = (results) => {
@@ -34,3 +37,5 @@ const main = function () {
 
   buttonSearchElement.addEventListener('click', onButtonSearchClicked);
 };
+
+module.exports = main;
