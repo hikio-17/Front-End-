@@ -1,7 +1,7 @@
 web components merupakan salah satu fitur yang diterapkan standar world wide web consortium (W3C). FItur ini memudahkan developer dalam membuat komponen UI websitenya menjadi lebih modular.
 
 ====> Kelebihan web components dibandingkan komponen yang dibuat menggunakan framework <====
-1. Standard: standar dari W3C
+1. Standard: standar dari (W3C)
 2. Compatibility untuk semua framework
 3. Simple karena dibangun dengan menggunakan HTML, CSS,JS murni
 
