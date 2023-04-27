@@ -1,0 +1,63 @@
+Terdapat 5 konsep penting dalam webpack untuk memahami bagaimna perilaku dari webpack ketika ia dijalankan:
+
+1. Entry
+    => Titik awal dimana webpack akan menganalisa berkas dan membentuk dependency graph
+
+2. Output
+    => Berkas bundel yang dihasilkan dari berkas-berkas yang dianalisis webpack berdasarkan entry point.
+3. LOaders
+    => Transformations, tools pada webpack, yang akan mempproses setiuap berkas selain javascript atau json yang kit aimport menjadi format yang dapat digunakan ketahap produksi
+4. Plugin
+    => digunakan untuk melakukan tugas seperti optimasi bundle management asset dan sebagainya
+5. MOde
+    => KOndisi yang digunakn webpack sebagai acuan optimasi apa saja yang harus diterapkan dalam melakukan tugasnya. Dalam mode kita dapat menetapkan nilai oproduction, develpemnt, ataupun none.
+
+
+// example entry and output
+    const path = require('path');
+
+    module.exports = {
+        module: {
+            entry: {
+            app: './src/app.js',
+            search: './src/search.js'
+        }
+        output: {
+            filename: '[name].js',
+            path: __dirname + '/dist'
+        }
+        }
+    }
+
+// example Loaders
+untuk menetapkan loaders dapat menggunakan module.rules. Di dalamnya terdapat dus high level properties yaitu test, dan use.
+
+ketika menggunakn loader kita harus menginstall loader yang akan  digunakan
+npm install css-loader --save-dev
+
+    test ==> merupakan tipe berkas yang akan ditransformasikan.
+
+    use ==> merupakan loader mana yang akan digunakan untuk mentransformasikan berkas terkait.
+
+module.exports = {
+    module: {
+        rules: [
+            { 
+                test: /\.css$/, 
+                use: [
+                    {
+                        loader: "style-loader",
+                        options: {
+                            // memasukkan style dengan tag <style> di bawah elemen body
+                            insert: "body"
+                        }
+                    },
+                    {
+                        loader: "css-loader"
+                    }
+                ]
+                
+            }
+        ]
+    }
+}
