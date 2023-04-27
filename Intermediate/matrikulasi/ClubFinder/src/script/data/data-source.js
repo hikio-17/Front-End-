@@ -1,4 +1,4 @@
-const clubs = require('./data/clubs');
+import clubs from "./clubs.js";
 
 class DataSource {
   static searchClub(keyword) {
@@ -13,4 +13,4 @@ class DataSource {
   }
 }
 
-module.exports = DataSource;
+export default DataSource;

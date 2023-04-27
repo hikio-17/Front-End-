@@ -1,0 +1,14 @@
+/**** Shadow DOM
+=> dapat mengisolasi sebagian struktur DOM di dalam komponen sehingga tidak dapat disentuh dari luar komponen atau nodenya. singkatnya kita isa sebut Shadow DOM sebagai 'DOM dalam DOM'
+
+Shadow DOM dapat membuat DOM Tree lain terbentuk secara terisolasi melalui host. Host atau Shadow Host merupakan komponen dari regular DOM Tree (Document Tree). DOM Tree di dalam SHadow DOM ini dimulai dari root bayangan (Shadow root), yang dibawahnya dapat memiliki banyak element lagi layaknya Document Tree.
+
+Terdapat beberapa terminologi dalah Shadow DOM:
+1. Shadow host 
+    => komponen/node yang terdapat pada regular DOM dimana shadow DOM terlampir pada komponen/node ini.
+2. Shadow Tree
+    => DOM Tree di dalam Shadow DOM
+3. Shadow boundary
+    => Batas dari shadow DOM dengan regular DOM
+4. Shadow root
+    => Root node dari shadow tree

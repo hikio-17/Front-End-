@@ -43,4 +43,4 @@ const clubs = [
   }
 ];
 
-module.exports = clubs;
+export default clubs;
