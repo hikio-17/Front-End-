@@ -38,3 +38,32 @@ const book = {
 
 xhr.send(JSON.stringify(book));
 
+
+//  AJAX menggunakan Fetch
+// get
+fetch('https://api-to-call.com/endpoint') // mengitrim request
+    .then((response) => {
+        return response.json(); // mengubah response object ke JSON
+    })
+    .then((responseJson) => {
+        console.log(responseJson); // mengnangi response berhasil
+    })
+    .catch((error) => {
+        console.log(error); // menangani response gagal
+    })
+
+// PUT, DELETE, POST yang memerlukan set header
+// fetch(targetUrl, options)
+
+fetch('https://books-api.dicoding.dev/add', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+        'X-Auth-Token': '12345',
+    },
+    body: JSON.stringify({
+        id: 1,
+        title: 'title',
+        author: 'author',
+    }),
+});
