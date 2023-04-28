@@ -1,0 +1,22 @@
+AJAX menggunakan XHR
+XHR (XMLHtppRequest) => class atau browser API yang digunakan untuk membuat HTTP Requests menggunakan javascript
+
+Penggunaan Dasar XHR
+
+// membuat objek XMLHtppRequest baru
+const xhr = new XMLHttpRequest();
+
+// menangani response berhasil
+xhr.onload = function() {
+    console.log(this.responseText)
+};
+
+// menangani response gagal
+xhr.onerror = function() {
+    console.log('ups something wrong');
+};
+
+// open request dan sends object
+// set method and endpoint api
+xhr.open('GET', 'http://api-to-call.com/endpoint')
+xhr.send()
