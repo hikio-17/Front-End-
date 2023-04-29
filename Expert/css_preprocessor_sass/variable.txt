@@ -1,0 +1,50 @@
+=============== VARIABLE =================
+Variable dapat digunakan untuk menyimpan suatu nilai pada suatu nama yang diawali dengan simbol dolar ($).
+
+// Deklarasi dan penggunaan Variabel
+// example
+$primary-color: #c6538c;
+$border-dark: rgba($base-color, 0.88);
+$base-color: #c6538c;
+
+.alert {
+   border: 1px solid $border-dark;
+}
+
+// Variable Scope
+// global variable
+$global-variable: red;
+
+.content {
+   // local variable
+   $local-variable: 12px;
+
+   color: $global-variable;
+   font-size: $local-variable;
+}
+
+.sidebar {
+   background-color: $global-variabel;
+
+   // kode dibawah ini akan error karenal $local-variable hanya tersedia pada .content
+   border: $local-variable solid salmon
+}
+
+// example using !global
+$font-size-primary: 2px;
+$color-primary: null;
+ 
+.sidebar {
+  font-size: $font-size-primary;
+}
+ 
+.content {
+  $font-size-primary: 4px !global;
+  $color-primary: red !global;
+  font-size: $font-size-primary;
+}
+ 
+.paragraph {
+  font-size: $font-size-primary;
+  color: $color-primary;
+}
