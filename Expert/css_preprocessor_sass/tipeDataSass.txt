@@ -1,0 +1,57 @@
+1. Number
+Tipe number dalam Sass memiliki dua bagian, yaitu bilangan (number) dan satuannya (unit)
+
+// example
+@debug 123; // 123
+@debug 0.5; // 0.5
+@debug 16px; // 16px
+@debug 5px * 2px; // 10px*px
+@debug 6px / 5s; // 30px/s
+
+@debug 2.5e3; // 2500
+@debug 100e-5; // 0.001
+
+2. String
+String merepresentasikan sekumpulan karakter. Dalam Sass, string dapat dituliskan dengan dua cara, yaitu dengan qoute(baik tunggal maupun ganda) dan tanpa qoute. Jika dibungkus dengan qoute, nilai ini akan dikatakan sebagai string, seperti "Times New Roman". jika tidak, nilai ini akan dikatakan sebagai sebuah identifier, misalnya, bold, center, blue, dsb.
+
+// example
+@debug 'Belajar CSS Preprocessor dengan Sass';
+@debug bold;
+@debug blue;
+
+3. color
+named color, Hex color, RGB Color, HSL color
+
+4. Boolean
+@debug true;
+@debug false;
+
+5. List
+// list tanpa tanda kurung
+@debug 10 0.3 'Belajar List';
+// list menggunakn tanda kurung, tanpa pemisah oma
+@debug [2 + 2 3 * 9];
+// menggunakan tanda kurung dan pemisah dengna koma
+@debug ((), (), [], []);
+
+6. Map 
+Map dalam sass dapat dianalogikan sebagai object literal dalam JavaScript. Map berisi sekumpulan pasangan key dan value. Untuk mengambil nilai dari map, kitacukup menyebutkan key yang sesuai.
+
+// example
+@debug ('regular': 400, 'medium': 500, 'bold': 700);
+@debug ('sm': 576px, 'md': 720px, 'lg': 960px, 'xl': 1140px);
+
+7. Calculation
+// example
+@debug calc(400px + 10%); // calc(400px + 10%)
+@debug calc(400px / 2); // 200px
+@debug min(100px, calc(1rem + 10%)); // min(100px, 1rem + 10%)
+
+8. Null
+// example
+@use 'sass:map';
+@use 'sass:string';
+ 
+@debug string.index('Helvetica Neue', 'Roboto'); // null
+@debug map.get(('large': 20px), 'small'); // null
+@debug &; // null

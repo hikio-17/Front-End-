@@ -1,0 +1,100 @@
+CSS Preprocessor merupakan sebuah program berupa sekumpulan logic code yang dapat dimodifikasi (compile) menjadi kode CSS sebagai output-nya agar menjadi sebuah input bagi program lain website
+
+======> css basic vs sass <=====
+
+// penetapan variabel
+
+css basic
+:root {
+   --font-stack: Helvetica, sans-serif;
+   --primary-color: #333;
+}
+
+body: {
+   font: 100% var(--font-stack);
+   color: var(--primary-color);
+}
+
+css sass
+$font-stack: Helvetica, sans-serif
+$primary-color: #333
+
+body 
+   font: 100% $font-stack
+   color: $primary-color
+
+
+// nesting
+
+=== HTML
+<main>
+   <div>
+      <h1>Lorem, ipsum dolor</h1>
+      <p>Lorem ipsun state met</p>
+      <p>Lorem</p>
+   </div>
+</main>
+
+=== usega css basic
+main {
+   font: 100% Helvetica, sans-serif;
+}
+
+main div h1 {
+   color: blue;
+}
+
+main div p {
+   line-height: 16px;
+}
+
+== usage css sass
+main 
+   font: 100% Helvetica, sans-serif;
+   div 
+      h1
+         color: blue
+      p
+         line-height: 16px;
+
+// modules
+base.sass
+// _base.sass
+$font-stack: Helvetica, sans-serif
+$primary-color: #333
+
+body 
+   font: 100% $font-stack
+   color: $primary-color
+
+--- import
+//style.css
+@use 'base'
+
+.inverse
+   background-color: base.$primary-color
+   color: white
+
+
+====> SASS (.sass) vs SCSS (.scss) <=====
+
+sass memiliki dua gaya sintaksis, yaitu Indented syntax(.sass) dan SCSS syntax(.scss)
+
+=== Indented syntax
+   memanfaatkan indentasi untuk membedakan code block yang satu dengan yan glainnya. Selain itu, untuk memisahkan css rule menggunakan baris baru, tidak menggunakan koma
+
+=== SCSS Syntax 
+   Sintaks ini sangat mirip dengan css biasa. dapat menggunakan kurung kurawal untuk menandakan declaration block dan titik koma untuk memisahakan declaration property;
+
+   example:
+   main {
+   font: 100% Helvetica, sans-serif;
+   div {
+         h1 {
+            color: blue
+         }
+         p {
+            line-height: 16px;
+         }
+      }
+   }
