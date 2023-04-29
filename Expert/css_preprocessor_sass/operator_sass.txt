@@ -1,0 +1,43 @@
+1. Equality
+   -- number
+   Tipe number dapat dikatakan sama jika memiliki nilai dan unit yang sama
+      @debug 1px == 1px; // true
+      @debug 1px != 1em; // true
+      @debug 1 != 1px; // true
+      @debug 96px == 1in; // true
+   -- string
+   Nilai string yang dibungkus dengan quotemaupun tidak akan mengembalikan true jika nilai yang dibandingkan sama
+      @debug 'Helvetica' == Helvetica; // true
+      @debug 'Helvetica' != 'Arial'; // true
+   -- color 
+   Nilai color dikatakan sama jika menghasilkan warna yang sama, walaupun penulisan formatnya berbeda
+      @debug orange == orange; // true
+      @debug hsl(34, 35%, 92.1%) == #f2ece4; // true
+      @debug rgba(179, 115, 153, 0.5) != rgba(179, 115, 153, 0.8); // true
+   -- list
+   Tipe list dikatakan sama bila setiap item dari kedua list memiliki kesamaan, baik dari nilainya maupun satuannya (jika number). Namun, bila pemisah antar item-nya dan tanda kurung yang digunakan berbeda, hasil perbandingan menjadi false
+      @debug (5px 7px 10px) == (5px 7px 10px); // true
+      @debug (5px 7px 10px) != (10px 14px 20px); // true
+      @debug (5px 7px 10px) != (5px, 7px, 10px); // true
+      @debug (5px 7px 10px) != [5px 7px 10px]; // true
+   
+   -- map
+   Kedua nilai bertipe map dapat dikatakan sama jika setiap pasangan key dan value bernilai sama.
+         $themes: ('venus': #998099, 'nebula': #d2e1dd);
+         @debug $themes == ('venus': #998099, 'nebula': #d2e1dd); // true
+         @debug $themes != ('venus': #998099, 'iron: #dadbdf); // true
+
+   -- function
+   Dua nilai bertipe function calculation yang dimiliki CSS dapat dikatakan sama jika function yang digunakan dan argumen yang dimasukkan sama.
+      @debug min(0px, 20px, 30px) != max(0px, 20px, 30px); // true
+      @debug calc(400px + 10%) != calc(400px - 10%); // true
+   
+   -- Boolean
+      @debug true == true; // true
+      @debug true != false; // true
+      @debug null != false; // true
+   
+   -- function 
+   Perbandingan dua function dapat dikatakan sama jika dibandingkan dengan function yang sama serta kedua function dideklarasikan dalam berkas yang sama.
+      @debug get-function('rgba') == get-function('rgba'); // true
+      @debug get-function('rgba') != get-function('hsla'); // true
