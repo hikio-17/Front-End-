@@ -41,3 +41,35 @@
    Perbandingan dua function dapat dikatakan sama jika dibandingkan dengan function yang sama serta kedua function dideklarasikan dalam berkas yang sama.
       @debug get-function('rgba') == get-function('rgba'); // true
       @debug get-function('rgba') != get-function('hsla'); // true
+
+
+===============
+// Relational  > , < , >=, <=
+@debug 100 > 50; // true
+@debug 10px < 17px; // true
+@debug 96px >= 1in; // true
+@debug 1000ms <= 1s; // true
+
+// Numeric +, -, *, %
+@debug 10s + 15s; // 25s
+@debug 1in - 10px; // 0.8958333333in
+@debug 5px * 3px; // 15px*px
+@debug 3px % 9px; // 3px
+
+// String +, -
+@debug 'Helvetica' + ' Neue'; // "Helvetica Neue"
+@debug sans- + serif; // sans-serif
+@debug sans - serif; // sans-serif
+
+// Boolean not, and, or
+// Operator negasi
+@debug not true; // false
+@debug not false; // true
+ 
+// Operator AND
+@debug true and true; // true
+@debug true and false; // false
+ 
+// Operator OR
+@debug true or false; // true
+@debug false or false; // false
