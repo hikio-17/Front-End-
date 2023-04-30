@@ -1,0 +1,80 @@
+nested selector SCSS vs CSS
+
+// usage SCSS
+main {
+   margin-block-start: 6px;
+
+   h1 {
+      color: $primary-color;
+   }
+
+   ol li {
+      list-style-type: lower-alpha;
+   }
+}
+
+// usage CSS
+main {
+   margin-block-start: 6px;
+}
+
+main h1 {
+   color: #333;
+}
+
+main ol li {
+   list-style-type: lower-alpha;
+}
+
+
+============ NESTING DALAM SELECTOR LIST ===========
+// usage SCSS
+.alert, .warning {
+   p {
+      margin-left: 0;
+      margin-right: 0;
+      padding-bottom: 0;
+   }
+}
+
+// usage CSS
+.alert, .warning p {
+   margin-left: 0;
+   margin-right: 0;
+   padding-bottom: 0;
+}
+
+========= NESTING DALAM SELECTOR COMBINATOR ============
+// usage SCSS
+ul > {
+   li {
+      list-style-type: none;
+   }
+}
+
+h2 {
+   + p {
+      border-top: 1px solid gray;
+   }
+}
+
+p {
+   ~ {
+      span {
+         opacity: 0.8;
+      }
+   }
+}
+
+// usage CSS
+ul > li {
+   list-style-type: none;
+}
+
+h2 + p {
+   border-top: 1px solid gray;
+}
+
+p ~ span {
+   opacity: 0.8;
+}
