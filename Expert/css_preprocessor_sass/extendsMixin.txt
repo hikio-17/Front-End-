@@ -1,0 +1,61 @@
+Extend digunakan untuk mewariskan style dari suatu selector ke selector lain, sehingga dapat melakukan penggunaan ulang style dan pseudo-class yang diterapkan pada selector pewaris akan diadopsi oleh selector turunannya. Sedangkan mixin digunakan untuk menyediakan kumpulan style reusable dan dapat digunakan secara fleksibel dengan memanfaatkan argumen. Jika terdapat relasi antara class, maka extend lebih cocok digunakan, sedangkan mixin dapat digunakan ketika ingin mengumpulkan style yang berbeda.
+
+// usage mixin
+@mixin alert-style {
+   padding: 16px;
+   border: 1px solid grey;
+   border-radius: 4px;
+}
+
+.alert {
+   @include alert-style;
+   background-color: lightgrey;
+}
+
+.alert-primary {
+   @include alert-style;
+   background-color: blue;
+}
+
+// hasil compile -> css
+.alert {
+   padding: 16px;
+   border: 1px solid grey;
+   border-radius: 4px;
+   background-color: lightgrey;
+}
+
+.alert-primary {
+   padding: 16px;
+   border: 1px solid grey;
+   border-radius: 4px;
+   background-colorblue;
+}
+
+
+===== usage extend=====
+// SCSS
+.alert {
+   background-color: lightgrey;
+   padding: 6px 10px;
+   border: 1px solid grey;
+   border-radius: 4px
+}
+
+.alert-primary {
+   @extend .alert;
+   background-color: blue;
+}
+
+// hasil compile -> css
+.alert, alert-primary {
+   background-color: lightgrey;
+   padding: 6px 10px;
+   border: 1px solid grey;
+   border-radius: 4px;
+}
+
+.alert-primary {
+   background-color: blue;
+}
+
