@@ -1,0 +1,36 @@
+file base/_code.scss
+code {
+   padding: 0.25em;
+   line-height: 0;
+}
+
+file/_lists.scss
+ul, ol {
+   text-align: left;
+
+   & & {
+      padding: {
+         bottom: 0;
+         left: 0;
+      }
+   }
+}
+
+
+// file style.scss
+@import 'base/code', 'base/lists';
+
+
+// noted
+Beberapa karakteristik yang dapat diikuti sebagai berikut:
+
+1. Penyebutan nama stylesheet yang disertai dengan tipenya.
+2. URL online yang diawali dengan “http://” atau “https://”.
+3. URL yang dibungkus dengan function url.
+4. Import yang menerapkan media query sebagai ukuran dilakukannya impor berkas. 
+Berikut sebagai beberapa contoh untuk masing-masing kriteria di atas.
+
+@import 'theme.css';
+@import 'http://fonts.googleapis.com/css?family=Droid+Sans';
+@import url(theme);
+@import 'landscape' screen and (orientation: landscape);
