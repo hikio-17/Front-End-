@@ -1,0 +1,71 @@
+// html
+<ol>
+   <li>Minggu</li>
+   <li>Senin</li>
+   <li>Selasa</li>
+   <li>Rabu</li>
+   <li>Kamis</li>
+   <li>Jum'at</li>
+   <li>Sabtu</li>
+</ol>
+
+// usage SCSS basix
+ol {
+   li {
+      color: green;
+   }
+
+   li:hover {
+      cursor: pointer;
+   }
+}
+
+// Usage ampersand Operator
+ol {
+   li {
+      color: green;
+   }
+
+   &:hover {
+      cursor: pointer;
+   }
+}
+
+// example 1 ampersan & pseudo-class
+.alert {
+   &:hover {
+      font-weight: bold;
+   }
+
+   [dir=rlt] & {
+      margin-left: 0;
+      margin-right: 10px;
+   }
+
+   :not() {
+      opacity: 0.8;
+   }
+}
+
+// example 2 selector complex
+
+.accordion {
+  max-width: 600px;
+  margin: 4rem auto;
+  width: 90%;
+  font-family: "Raleway", sans-serif;
+  background: #f4f4f4;
+ 
+  &__copy {
+    display: none;
+    padding: 1rem 1.5rem 2rem 1.5rem;
+    color: gray;
+    line-height: 1.6;
+    font-size: 14px;
+    font-weight: 500;
+ 
+    &--open {
+      display: block;
+    }
+  }
+}
