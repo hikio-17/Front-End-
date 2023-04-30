@@ -34,3 +34,21 @@ Berikut sebagai beberapa contoh untuk masing-masing kriteria di atas.
 @import 'http://fonts.googleapis.com/css?family=Droid+Sans';
 @import url(theme);
 @import 'landscape' screen and (orientation: landscape);
+
+===== visibility private
+file src/_orners.scss
+$-radius: 3px;
+
+@Mixin rounded {
+   border-radius: $-radius;
+}
+
+file style.scc
+@use 'src/corners';
+
+.button {
+   @include corners.rounded;
+
+   // Error karena tidak tersedia di luat _corners.scss
+   // padding: 5px + corners.$-radius;
+}
