@@ -1,0 +1,18 @@
+Untuk membuat function dalam Sass dimulai dengan sintaks @function kemudian diikuti dengan nama functionnya, parameter(-parameter), dan block code-nya. Untuk mengembalikan nilai pada saat pemanggilan function, dapat menggunakan sintaks @return
+
+// example
+// usage SCSS
+@function sumTwoNumber($firstNumber, $secondNumber) {
+   @return $firstNumber + $secondNumber;
+}
+
+.sidebar {
+   float: left;
+   margin-left: sumTwoNumber(4, 3) * 1px;
+}
+
+// usage CSS
+.sidebar {
+   float: left;
+   margin-left: 7px;
+}
