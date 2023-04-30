@@ -1,0 +1,131 @@
+// Sass List
+Module ini digunakan untuk melakukan manipulasi terhadap list.
+
+1. function append()
+   ==> fungsi ini menerima tiga buah argumen
+      1. $list sebagai list yang akan ditabhkan
+      2. $val sebagai nilai yang akan dimasukkan ke list
+      3. $separator sebagai pemisah yang ingin diterapkan pada list output.
+
+   example
+   @debug list.append(10px 20px, 30px); // 10px 20px 30px
+   @debug list.append((blue, red), green); // blue, red, green
+
+   // list bersarang
+   @debug list.append(10px 20px, 30px 40px); // 10px 20px (30px 40px)
+
+   @debug list.append(10px, 20px, $separator: comma); // 10px, 20px
+   @debug list.append((blue, red), green, $separator: space); // blue red green
+
+2. function join()
+   ==> menggabung beberapa list menjadi satu list. menerima 4 buah argument;
+      1. $list1: sebagai list pertama yang digabungkan
+      2. $list2: sebagai list kedua yang akan digabungkan dengan list1;
+      3. $separator: sebagai pemisah yang ingin digunakan pada output list
+      4. $bracketed: sebagai penentuan pembungkus list apakah ingin diberikan bracket atau tidak
+
+      // example
+      @debug list.join(10px 20px, 30px 40px); // 10px 20px 30px 40px
+      @debug list.join((blue, red), (#abc, #def)); // blue, red, #abc, #def
+      @debug list.join(10px, 20px); // 10px 20px
+      @debug list.join(10px, 20px, $separator: comma); // 10px, 20px
+      @debug list.join((blue, red), (#abc, #def),   $separator: space); // blue red #abc #def
+      @debug list.join([10px], 20px); // [10px 20px]
+      @debug list.join(10px, 20px, $bracketed: true); // [10px 20px]
+
+3. funtion list.nth()
+==> digunakan untuk mengambil nilai di dalam list. function ini menerima dua parameter, yaitu $list sebagai list elemen-elemen dan $n sebagai index urutan elemen yang ingin diambil.
+
+    // example
+    @debug list.nth(10px 12px 16px, 2); // 12px
+    @debug list.nth([line1, line2, line3], -1); // line3
+
+
+============= SASS MAP ==============
+Hal utama dalam bekerja dengan map adalah mengambil value pada key yagn sesuai
+
+1. function map.get() menerima tiga buah parameter
+   1. $map sebagai data map yang ingin diambil datanya
+   2. $key sebagai key yang ingin diabli valuenya
+   3. $keys yang berperilaku sebagai arbitrary value yang dapat menerima banyak key untuk merujuk pada value spesifik
+
+   // example
+   $font-weights: ("regular": 400, "medium": 500, "bold": 700);
+   @debug map.get($font-weights, "medium"); // 500
+   @debug map.get($font-weights, "extra-bold"); // null
+ 
+$alphabet: (
+  a: (
+    b: (
+      c: d,
+    ),
+  ),
+);
+@debug map.get($alphabet, a, b, c); // d
+
+  2. function map.remove()
+  ==> untuk menghilangkan sepasang key dan value dari map. function ini menerima dua buah parameter, yaitu $map sebagai data map-nya dan $keys sebagai key yang akan dihilangkan dari map;
+
+  // example
+  $font-weights: ("regular": 400, "medium": 500, "bold": 700);
+ 
+@debug map.remove($font-weights, "regular"); // ("medium": 500, "bold": 700)
+@debug map.remove($font-weights, "regular", "bold"); // ("medium": 500)
+@debug map.remove($font-weights, "bolder"); // ("regular": 400, "medium": 500, "bold": 700)
+
+3. function map.has-key()
+==> untuk memeriksa apakah suatu map memiliki key tertentu. function ini menerima tiga buah parameter;
+    1. $map sebagai data map yang akan diperiksa
+    2. $key sebagai key yang akan diperikase ketersediannya dalam map
+    3. $keys sebagai arbitrary value parameter yagn dapat digunakan untuk memerikasa key pada nested map
+    
+
+    // example
+    $font-weights: ("regular": 400, "medium": 500, "bold": 700);
+ 
+@debug map.has-key($font-weights, "regular"); // true
+@debug map.has-key($font-weights, "bolder"); // false
+ 
+$fonts: (
+ "Helvetica": (
+   "weights": (
+     "regular": 400,
+     "medium": 500,
+     "bold": 700
+   )
+ )
+);
+ 
+@debug map.has-key($fonts, "Helvetica", "weights", "regular"); // true
+@debug map.has-key($fonts, "Helvetica", "colors"); // false
+
+
+============== Sass Math ============
+module ini memiliki sekumpulan function yang dapat membantu melakukan perhitungan angka.
+
+1. function math.ceil();
+==> membulatkan angka desimal ke atas
+    // example
+    @debug math.ceil(4); // 4
+    @debug math.ceil(4.2); // 5
+    @debug math.ceil(4.9); // 5 
+
+2. function math.floor()
+==> membulatkan angka desimal ke bawah
+    // example
+    @debug math.ceil(4); // 4
+    @debug math.ceil(4.2); // 4
+    @debug math.ceil(4.9); // 4
+
+3. function math.pow()
+==> operasi perpangkatan
+   // example
+    @debug math.pow(3, 2); // 9
+    @debug math.pow(4, 2); // 16
+    @debug math.ceil(2, 5); // 32
+
+4. function math.is-unitless();
+fungsi ini digunakan untuk mengecek suatu number miliki satuan atau tidak, yang menerima satu parameter
+    // example 
+    @debug math.is-unitless(100) // false;
+    @debug math.is-unitless(100px) // true
